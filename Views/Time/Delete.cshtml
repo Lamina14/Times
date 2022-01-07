@@ -1,0 +1,53 @@
+﻿@model MasterTimesContext.Models.TimeViewModel
+
+@{
+    ViewData["Title"] = "Deletar Time";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h3>Você tem certeza que deseja deletar isto?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Time)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Time)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cores)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cores)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tecnico)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tecnico)
+        </dd>
+        <dt class="col-sm-2">
+            Uploaded Image
+        </dt>
+        <dd class="col-sm-10">
+            <img src="@("~/Image/"+Model.Image)" asp-append-version="true" width="250px" height="250px" />
+        </dd>
+
+
+       
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Timeid" />
+        <input type="submit" value="Deletar" class="btn btn-danger" /> |
+        <a asp-action="Index">Voltar para a lista</a>
+    </form>
+</div>
